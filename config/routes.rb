@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :sleeps, param: :user_id, only: [ :index, :create ] do
-        get "following", on: :member
-      end
-      resources :users, param: :user_id, only: [] do
+      resources :users, param: :id, only: [ :show ] do
         resources :follows, only: [ :index ] do
-          post ":following_user_id", action: :create, on: :collection
+            post ":following_user_id", action: :create, on: :collection
+            delete ":following_user_id", action: :destroy, on: :collection
+        end
+        resources :sleeps, param: :user_id, only: [ :index, :create ] do
+          get "following", on: :member
         end
       end
-      resources :users, param: :user_id, only: [ :show ]
+      # resources :users, param: :user_id, only: [ :show ]
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
