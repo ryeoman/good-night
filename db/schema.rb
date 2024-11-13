@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_13_021224) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_13_032125) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "follows", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "following_id"
+    t.bigint "following_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_follows_on_user_id"
@@ -24,7 +24,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_13_021224) do
 
   create_table "sleeps", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.datetime "clock_in", precision: nil
+    t.datetime "clock_in", precision: nil, null: false
     t.datetime "clock_out", precision: nil
     t.bigint "duration"
     t.datetime "created_at", null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_13_021224) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
