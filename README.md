@@ -1,24 +1,37 @@
-# README
+# GOOD-NIGHT
+The app work to record user sleep time.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Build Status](https://github.com/ryeoman/good-night/actions/workflows/ci.yml/badge.svg)
 
-Things you may want to cover:
+## Build Using
+* ruby 3.3.6 (2024-11-05 revision 75015d4c1f) [arm64-darwin24]
+* Rails 8.0.0
 
-* Ruby version
+## System dependencies
+* Postgresql 16
 
-* System dependencies
+## How to Start The App?
+* Install all pre-requisite.
+* Run postgresql databse.
+* Setup databse configuration in `.env`.
+```
+DATABASE_USERNAME=<database_username>
+DATABASE_PASSWORD=<database_password>
+DATABASE_HOSTNAME=<databse_hostname>
+```
+* Run `rails server`. by default you will see it's running at port 3000.
 
-* Configuration
+## Unit Test
+* Run `rails test:all`. It will generate `/coverage` directory.
+* Open `index.html` inside the `/coverage` directory. It will show a web view of the code coverage.
 
-* Database creation
+## App Diagram
+![image](https://github.com/user-attachments/assets/869957fa-9670-4a8c-bdad-6f124884ae6f)
 
-* Database initialization
+## Database Design
+You can find it at [dbdiagram.io](https://dbdiagram.io/d/Good-night-6732d2c2e9daa85aca1c67fb)
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+
