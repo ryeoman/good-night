@@ -75,3 +75,19 @@ jobs:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
           # REDIS_URL: redis://localhost:6379/0
         run: bin/rails db:test:prepare test
+      
+      - name: Install dependencies
+        run: |
+          bundle install
+
+      - name: Run tests with coverage
+        env:
+          RAILS_ENV: test
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432
+        run: bin/rails test:all
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage/.resultset.json
+      
