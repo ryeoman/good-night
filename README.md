@@ -2,6 +2,7 @@
 The app work to record user sleep time.
 
 ![Build Status](https://github.com/ryeoman/good-night/actions/workflows/ci.yml/badge.svg)
+![Codecov](https://codecov.io/gh/ryeoman/good-night/branch/main/graph/badge.svg)
 
 ## Build Using
 * ruby 3.3.6 (2024-11-05 revision 75015d4c1f) [arm64-darwin24]
