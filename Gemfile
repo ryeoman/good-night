@@ -56,4 +56,7 @@ group :development, :test do
 
   gem "ruby-lsp"
   gem "rubocop"
+
+  # Add .env configuration
+  gem "dotenv-rails"
 end
