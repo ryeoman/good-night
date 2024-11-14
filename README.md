@@ -24,3 +24,14 @@ DATABASE_HOSTNAME=<databse_hostname>
 ## Unit Test
 * Run `rails test:all`. It will generate `/coverage` directory.
 * Open `index.html` inside the `/coverage` directory. It will show a web view of the code coverage.
+
+## App Diagram
+![image](https://github.com/user-attachments/assets/869957fa-9670-4a8c-bdad-6f124884ae6f)
+
+## Database Design
+You can find it at [dbdiagram.io](https://dbdiagram.io/d/Good-night-6732d2c2e9daa85aca1c67fb)
+
+
+
+
+
