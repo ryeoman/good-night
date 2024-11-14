@@ -1,24 +1,24 @@
-# README
+# GOOD-NIGHT
+The app work to record user sleep time.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Build Using
+* ruby 3.3.6 (2024-11-05 revision 75015d4c1f) [arm64-darwin24]
+* Rails 8.0.0
 
-Things you may want to cover:
+## System dependencies
+* Postgresql 16
 
-* Ruby version
+## How to Start The App?
+* Install all pre-requisite.
+* Run postgresql databse.
+* Setup databse configuration in `.env`.
+```
+DATABASE_USERNAME=<database_username>
+DATABASE_PASSWORD=<database_password>
+DATABASE_HOSTNAME=<databse_hostname>
+```
+* Run `rails server`. by default you will see it's running at port 3000.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Unit Test
+* Run `rails test:all`. It will generate `/coverage` directory.
+* Open `index.html` inside the `/coverage` directory. It will show a web view of the code coverage.
