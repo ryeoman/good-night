@@ -21,7 +21,7 @@ default: &default
   # TODO: make it secure by moving the credential to Vault or other Secret Manager
   password: <%= ENV['DATABASE_PASSWORD'] %>
   username: <%= ENV['DATABASE_USERNAME'] %>
-  host: localhost
+  host: <%= ENV['DATABASE_HOSTNAME'] %>
 
 development:
   <<: *default
