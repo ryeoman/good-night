@@ -1,0 +1,13 @@
+john_follows_Jane:
+  id: 1
+  user_id: 1
+  following_id: 2
+  created_at: 2024-11-13 03:25:46.994000000 Z
+  updated_at: 2024-11-13 03:25:46.994000000 Z
+
+john_follows_alice:
+  id: 2
+  user_id: 1
+  following_id: 3
+  created_at: 2024-11-13 11:02:36.620000000 Z
+  updated_at: 2024-11-13 11:02:36.620000000 Z

@@ -1,0 +1,23 @@
+user_one:
+  id: 1
+  name: "John Doe"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+user_two:
+  id: 2
+  name: "Jane Smith"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+user_three:
+  id: 3
+  name: "Alice Johnson"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+user_four:
+  id: 4
+  name: "Bob Brown"
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

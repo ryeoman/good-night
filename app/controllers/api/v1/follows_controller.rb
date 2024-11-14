@@ -3,16 +3,24 @@ class Api::V1::FollowsController < ApplicationController
 
   def index
     user = User.find_by(id: params[:user_id])
-    json_response(
-        status: "success",
-        code: 200,
-        data: user.followed_users
+    if user.nil?
+      json_response(
+        status: "error",
+        code: 404,
+        message: "User not found"
       )
+      return
+    end
+    json_response(
+      status: "success",
+      code: 200,
+      data: user.followed_users
+    )
   end
 
   def create
     user_id = params[:user_id]
-    following_id = params[:following_user_id]
+    following_id = params[:following_id]
 
     existing_follow = Follow.find_by(user_id: user_id, following_id: following_id)
     if existing_follow
@@ -43,7 +51,7 @@ class Api::V1::FollowsController < ApplicationController
 
   def destroy
     user_id = params[:user_id]
-    following_id = params[:following_user_id]
+    following_id = params[:following_id]
 
     existing_follow = Follow.find_by(user_id: user_id, following_id: following_id)
     if existing_follow && existing_follow.destroy

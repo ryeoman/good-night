@@ -1,0 +1,17 @@
+sleep_one:
+  id: 1
+  user_id: 1
+  clock_in: <%= 1.day.ago.iso8601 %>
+  clock_out: null
+  duration: null
+  created_at: <%= 1.day.ago.iso8601 %>
+  updated_at: <%= Time.now.iso8601 %>
+
+sleep_two:
+  id: 2
+  user_id: 2
+  clock_in: <%= 1.day.ago.iso8601 %>
+  clock_out: <%= Time.now.iso8601 %>
+  duration: <%= 1.day.to_i %>
+  created_at: <%= 1.day.ago.iso8601 %>
+  updated_at: <%= Time.now.iso8601 %>

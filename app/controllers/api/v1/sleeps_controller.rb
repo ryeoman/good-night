@@ -35,7 +35,7 @@ class Api::V1::SleepsController < ApplicationController
     end
 
     sleep = Sleep.new(user_id: params[:user_id], clock_in: Time.current)
-    if sleep.save!()
+    if sleep.save()
       json_response(
         status: "success",
         code: 200,
@@ -54,7 +54,22 @@ class Api::V1::SleepsController < ApplicationController
 
   def following
     user = User.find_by(id: params[:user_id])
+    if user.nil?
+      return json_response(
+        status: "error",
+        code: 404,
+        message: "User does not exist"
+      )
+    end
     followed_user = user.followed_users
+    if followed_user.nil? || followed_user.empty?
+      return json_response(
+        status: "success",
+        code: 200,
+        data: []
+      )
+    end
+
     sleeps = Sleep.where(user_id: followed_user.pluck(:id))
             .where("clock_in >= ?", 7.days.ago)
             .where.not(duration: nil)

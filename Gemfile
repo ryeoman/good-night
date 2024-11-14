@@ -44,6 +44,16 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Test library
+  gem "minitest"
+
+  # Mocking and stubbing library for tests
+  gem "mocha", require: "mocha/minitest"
+
+  # Test coverage
+  gem "simplecov"
+
+  gem "ruby-lsp"
+  gem "rubocop"
 end
-
-
